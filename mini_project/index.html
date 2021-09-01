@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #272a2e">
+		<div class="container">
+		  <a class="navbar-brand" href="#" onclick="homePage()"><img src="logo.png" width="30" class="mx-1"> mtalg</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+
+		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+		    <ul class="navbar-nav ml-auto" id="unauthorisedUserNav">
+		    	<li class="nav-item active">
+		        	<a class="nav-link" href="#" onclick="homePage()">About</a>
+		     	 </li>
+		      	<li class="nav-item">
+		        	<a class="nav-link" href="#products">Products <span class="sr-only">(current)</span></a>
+		     	 </li>
+		      	<li class="nav-item">
+		       		<a class="nav-link" href="#about">Library</a>
+		     	 </li>
+		     	 <li class="nav-item">
+		        	<a class="nav-link" href="#" onclick="blogPage(); refreshPosts()">Blog</a>
+		     	 </li>
+			</ul>
+		    <ul class="navbar-nav ml-auto" id="authorisedUserNav" style="display: none;">
+		    	<li class="nav-item">
+		        	<a class="nav-link" href="#" onclick="homePage()">About</a>
+		     	 </li>
+		      	<li class="nav-item">
+		        	<a class="nav-link" href="#products">Products <span class="sr-only">(current)</span></a>
+		     	 </li>
+		      	<li class="nav-item">
+		       		<a class="nav-link" href="#about">Library</a>
+		     	</li>
+		     	<li class="nav-item">
+		       		<a class="nav-link" href="#">Quiz</a>
+		     	</li>
+		     	<li class="nav-item">
+		        	<a class="nav-link" href="#" onclick="blogPage()">Blog</a>
+		     	</li>
+		     	<li class="nav-item dropdown ac">
+		        	<a class="nav-link active dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></a>
+			        <div class="dropdown-menu p-3" aria-labelledby="navbarDropdown">
+			          	<a class="dropdown-item" href="#">Profile</a>
+			          	<a class="dropdown-item" href="#">Settings</a>
+			          	<div class="dropdown-divider"></div>
+			         	<a class="dropdown-item font-weight-bold" href="#" onclick="logout()">Logout</a>
+			        </div>
+		      	</li>
+		    </ul>
+		  </div>
+		</div>
+	</nav>
+	<div id="mainPage">
+		<div class="bg" style="background: url('https://wallpaperset.com/w/full/7/c/c/392452.jpg') no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; background-size: cover; -o-background-size: cover; width: 100%; height: 920px;">
+			<div class="shadow-box" style="width: 100%; height: 920px; background-color:rgba(0,0,0,.5);">
+				<div class="container" style="padding-top: 230px;" id="loginPage">
+					<h1 class="display-4 text-light text-center">
+						<strong>
+							Mini Project
+						</strong>
+					</h1>
+					<div id="emailForm">
+						<div class="row mt-5">
+							<input id="emailInput" type="text" class="form-control col-md-7 offset-2" placeholder="Enter your email...">
+							<button class="btn btn-primary col-md-1 ml-2" onclick="passwordForm()">Sign in</button>
+						</div>
+						<p class="text-light col-9 text-right mt-2">New user?
+							<a href="#" class="text-light" onclick="registerPage()"><u>Register</u></a>
+						</p>
+						<p class="text-light text-center mt-5 h3" id="result"></p>
+					</div>
+					<div id="passwordForm" class="row mt-5" style="display: none;">
+						<input id="passwordInput" type="password" class="form-control col-md-7 offset-2" placeholder="Enter your password">
+						<button class="btn btn-success col-md-1 ml-2" onclick="auth()">Submit</button>
+					</div>
+					<div id="profilePage" style="display: none;">
+						<h3 class="text-light text-center mt-5">
+							Welcome, <span id="currentUserName"></span>
+						</h3>
+					</div>
+				</div>
+				<div class="container" id="registerPage" style="display: none;">
+					<div class="col-12 pt-5">
+						<p class="h2 text-center pt-5 text-light">Register</p>
+						<div class="card col-6 offset-3 mt-4 text-dark" style="background: #c3cad4;">
+							<div class="card-body p-4">
+								<form>
+									<div class="row my-3">
+										<div class="col">
+											<label>Full name</label>
+											<input type="text" class="form-control" placeholder="Full name" id="registerFullName">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="exampleInputEmail1">Email address</label>
+										<input type="email" class="form-control" id="registerEmail" aria-describedby="emailHelp" placeholder="Enter email">
+										<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+									</div>
+									<div class="form-group">
+											<label for="exampleInputPassword1">Password</label>
+										<input type="password" class="form-control" id="registerPassword" placeholder="Password">
+									</div>
+									<div class="form-check">
+										<input type="checkbox" class="form-check-input" id="exampleCheck1">
+										<label class="form-check-label font-weight-normal">Email me about latest news</label>
+									</div>
+									<button type="submit" class="btn btn-info my-3" onclick="addUser()"> Submit </button>
+								</form>	
+								<button class="btn btn-light col-4 offset-4" onclick="homePage()"> Go Back </button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div id="products">
+				<div class="row my-4">
+					<p class="h1 col-md-12 mb-5">Our Products</p>
+					<div class="col-md-4">
+						<div class="card" style="width: 18rem;">
+	  						<img class="card-img-top" src="https://mobile-review.com/news/wp-content/uploads/iphone-111.jpg" alt="Card image cap">
+	  						<div class="card-body">
+	  							<h5 class="card-title text-primary">Project one</h5>
+	  							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+	  							<a href="#" class="btn btn-primary">Learn more</a>
+	  						</div>
+	  					</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card" style="width: 18rem;">
+	  						<img class="card-img-top" src="https://mobile-review.com/news/wp-content/uploads/iphone-111.jpg" alt="Card image cap">
+	  						<div class="card-body">
+	  							<h5 class="card-title text-primary">Project one</h5>
+	  							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+	  							<a href="#" class="btn btn-primary">Learn more</a>
+	  						</div>
+	  					</div>
+					</div>
+					<div class="col-md-4">
+						<div class="card" style="width: 18rem;">
+	  						<img class="card-img-top" src="https://mobile-review.com/news/wp-content/uploads/iphone-111.jpg" alt="Card image cap">
+	  						<div class="card-body">
+	  							<h5 class="card-title text-primary">Project one</h5>
+	  							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+	  							<a href="#" class="btn btn-primary">Learn more</a>
+	  						</div>
+	  					</div>
+					</div>
+				</div>		
+			</div>	
+		</div>
+		<div class="container-fluid mt-5" id="about">
+			<div class="row">
+				<div class="col-md-6" style="padding-top: 200px; padding-left: 50px;">
+					<p class="h2">Lorem</p>
+					<p class="h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+				</div>
+				<div class="col-md-6 p-0">
+					<img src="https://www.apple.com/newsroom/images/product/iphone/standard/Apple_announce-iphone12pro_10132020.jpg.landing-big_2x.jpg" style="width: 100%">			
+				</div>
+				<div class="col-md-6 p-0">
+					<img src="https://www.chop.edu/sites/default/files/health-tip-how-too-much-screen-time-affects-kids-eyes-16x9.jpg" style="width: 100%">			
+				</div>
+				<div class="col-md-6" style="padding-top: 200px; padding-left: 50px;">
+					<p class="h2">Lorem</p>
+					<p class="h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+				</div>
+				<div class="col-md-6" style="padding-top: 200px; padding-left: 50px;">
+					<p class="h2">Lorem</p>
+					<p class="h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod</p>
+				</div>
+				<div class="col-md-6 p-0">
+					<img src="https://i.pinimg.com/originals/94/37/73/9437730189ca6a7009cadecfe383962d.jpg" style="width: 100%">			
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="blogPage" class="container" style="display: none">
+		<h1 class="display-4 font-weight-bold mt-5">This is my Blog</h1>
+		<div class="row">
+			<div class="col-md-8" id="card"></div>
+			<div class="col-4">
+				<div class="card mt-4 mx-1">
+					<h5 class="card-header">Add new Post</h5>
+					<div class="card-body">
+						<div class="form-group">
+							<label class="font-weight-bold">Title</label>
+							<input type="text" class="form-control" id="postTitleInput">
+						</div>
+						<div class="form-group">
+							<label class="font-weight-bold">Content</label>
+							<textarea class="form-control" rows="3" id="postContentInput"></textarea>
+						</div><div class="form-group">
+							<label class="font-weight-bold">Author</label>
+							<input type="text" class="form-control" id="postAuthorInput">
+						</div>					
+						<a href="#" class="btn btn-primary" onclick="addPost(); refreshPosts()">Submit</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.js"></script>
+<script type="text/javascript" src="js/my.js"></script>
+</html>
