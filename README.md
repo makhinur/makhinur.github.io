@@ -3,5 +3,5 @@
 # Махинур Талгатова
 Мои работы
 
-[Мини-проект](https://makhinur.github.io/mini_project/ "Мини-проект")
-[Проект VK](https://makhinur.github.io/project_vk/ "Проект VK")
+[Работа 1](https://makhinur.github.io/mini_project/ "Работа 1") - Работа с регистрацией, дизайном и оставлением комментариев.  
+[Работа 2](https://makhinur.github.io/project_vk/ "Работа 2") - Работа с дизайном и функциями Вконтакте.
