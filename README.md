@@ -1,2 +1,2 @@
-# makhinur.github.io
-My first website
+# Махинур Талгатова
+Мои работы
