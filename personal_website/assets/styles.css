@@ -1,0 +1,62 @@
+
+.wrapper {
+    max-width: 70vw;
+    margin: 50px auto;
+    border: 1px solid rgb(5, 5, 5);
+    border-radius: 4px;
+    padding: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.left_side {
+    text-align: start;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+img {
+    background: none !important;
+    margin-right: 10px;
+    border-radius: 4px;
+}
+
+
+
+* body {
+    color: #15120fe1;
+    margin: 0;
+    text-align: center;
+    font-family: "Merriweather", serif;
+    background-color: #e7dfd8;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 5.625rem;
+    margin: 0 auto;
+    font-family: "Sacramento", cursive;
+}
+
+a {
+    text-decoration: none;
+}
+
+.interests {
+    margin-top: 30px;
+    display: flex;
+    li {
+        line-height: 2;
+    }
+}
+
+.hobbies {
+    margin-left: 50px;
+}
+
+section p {
+    font-weight: 600;
+}
