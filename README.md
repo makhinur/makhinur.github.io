@@ -9,5 +9,5 @@ Projects
 
 Jusan Singularity Frontend
 
-1. [Personal Website](https://makhinur.github.io/personal_project/ "Personal Project")
+1. [Personal Website](https://makhinur.github.io/personal_website/ "Personal Website")
 
